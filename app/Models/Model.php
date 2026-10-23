@@ -25,7 +25,7 @@
             $values = implode(",", array_map(fn($v) => is_string($v) ? "'$v'" : $v, array_values($data)));
             $fields = implode(",",array_keys($data));
             $sql="INSERT INTO {$this->table}({$fields}) VALUES ({$values});";
-            dd($sql);
+            // dd($sql);
             $stmt=$this->db->prepare($sql);
             if ($stmt->execute($data)) {
                 return $data;
